@@ -1,3 +1,12 @@
+To add a feature that plays music randomly from your specified list of songs when the HTML file is opened, you can use JavaScript. Here’s how you can modify your HTML file to achieve this:
+
+1. Add a `<script>` tag in the `<head>` section to include the JavaScript code.
+2. Create an array containing the filenames of your music files.
+3. Use JavaScript to randomly select one of the files and play it when the page loads.
+
+Here is your modified HTML file with the necessary changes:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +100,33 @@
             height: auto;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // List of music files
+            const musicFiles = [
+                "Just Before the Battle Mother.mp3",
+                "Maryland, My Maryland.mp3",
+                "Stonewall Jackson s Way.mp3",
+                "The Southern Wagon.mp3",
+                "The Valiant Conscript.mp3"
+            ];
+
+            // Function to select a random music file
+            function getRandomMusic() {
+                const randomIndex = Math.floor(Math.random() * musicFiles.length);
+                return musicFiles[randomIndex];
+            }
+
+            // Create an audio element and set the source to a random music file
+            const audioElement = document.createElement("audio");
+            audioElement.src = "music/" + getRandomMusic(); // Assuming the music files are in a 'music' folder
+            audioElement.autoplay = true;
+            audioElement.controls = true; // Add controls to the audio element
+
+            // Append the audio element to the body
+            document.body.appendChild(audioElement);
+        });
+    </script>
 </head>
 <body>
     <img src="img/school_logo.png" alt="School Logo" class="school-logo">
@@ -142,7 +178,6 @@ and marked a turning point in the Civil War.</p>
         <div class="diorama">
             <img src="img/Diorama.png" alt="Diorama of the Battle of Gettysburg">
 
-            
             <div class="flag-labels">
                 <div>
                     <p>Confederate States of America Flag</p>
@@ -185,7 +220,3 @@ Accessed May 15, 2024. <a href="https://www.nps.gov/gett/index.htm">https://www.
 
     <div class="sidebar">
         <p>Student Name: <br> <strong>Ryan Nikbin</strong></p>
-        <p>Teacher Name: <br> <span class="teacher-name">Mr. Thomas Miller</span></p>
-    </div>
-</body>
-</html>
