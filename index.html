@@ -91,33 +91,7 @@
             height: auto;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Array of music file URLs
-            const musicFiles = [
-                "https://cdn.discordapp.com/attachments/1017577698966638726/1243226826730635346/Just_Before_the_Battle_Mother.mp3?ex=6650b4b5&is=664f6335&hm=200e26471a40b1fdcbffdce5e025bc6d87e6e554855532edad682e59d380ac54&",
-                "https://cdn.discordapp.com/attachments/1017577698966638726/1243228309710569642/Maryland_My_Maryland.mp3?ex=6650b617&is=664f6497&hm=21762b94bfe2d3618eae9c3bba48325d723853725cc264f833ce79f61cc54136&",
-                "https://cdn.discordapp.com/attachments/1017577698966638726/1243228335665057833/Stonewall_Jackson_s_Way.mp3?ex=6650b61d&is=664f649d&hm=1a4daba11a49e2307c6809526d8d37fb37b4f5cfa23e6cb809e5a8bae34957cf&",
-                "https://cdn.discordapp.com/attachments/1017577698966638726/1243228351574052955/The_Southern_Wagon.mp3?ex=6650b621&is=664f64a1&hm=55429760df19a45e7ab5a9795338bd50d279d68dca8e4739a0ed537ed334c035&",
-                "https://cdn.discordapp.com/attachments/1017577698966638726/1243228361594241076/The_Valiant_Conscript.mp3?ex=6650b623&is=664f64a3&hm=41e0acd0c2b026fcdb9b85a4b901368380552d4b786e193dc07a200318547427&"
-            ];
 
-            // Function to get a random music file URL
-            function getRandomMusicFile() {
-                const randomIndex = Math.floor(Math.random() * musicFiles.length);
-                return musicFiles[randomIndex];
-            }
-
-            // Create an audio element and set the source to a random music file
-            const audioElement = document.createElement("audio");
-            audioElement.src = getRandomMusicFile();
-            audioElement.autoplay = true;
-            audioElement.controls = true; // Add controls to the audio element
-
-            // Append the audio element to the body
-            document.body.appendChild(audioElement);
-        });
-    </script>
 </head>
 <body>
     <img src="img/school_logo.png" alt="School Logo" class="school-logo">
