@@ -91,6 +91,33 @@
             height: auto;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // List of music files
+            const musicFiles = [
+                "Just Before the Battle Mother.mp3",
+                "Maryland, My Maryland.mp3",
+                "Stonewall Jackson s Way.mp3",
+                "The Southern Wagon.mp3",
+                "The Valiant Conscript.mp3"
+            ];
+
+            // Function to select a random music file
+            function getRandomMusic() {
+                const randomIndex = Math.floor(Math.random() * musicFiles.length);
+                return musicFiles[randomIndex];
+            }
+
+            // Create an audio element and set the source to a random music file
+            const audioElement = document.createElement("audio");
+            audioElement.src = "music/" + getRandomMusic(); // Assuming the music files are in a 'music' folder
+            audioElement.autoplay = true;
+            audioElement.controls = true; // Add controls to the audio element
+
+            // Append the audio element to the body
+            document.body.appendChild(audioElement);
+        });
+    </script>
 </head>
 <body>
     <img src="img/school_logo.png" alt="School Logo" class="school-logo">
@@ -142,7 +169,6 @@ and marked a turning point in the Civil War.</p>
         <div class="diorama">
             <img src="img/Diorama.png" alt="Diorama of the Battle of Gettysburg">
 
-            
             <div class="flag-labels">
                 <div>
                     <p>Confederate States of America Flag</p>
